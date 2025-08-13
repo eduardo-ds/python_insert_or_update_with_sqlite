@@ -1,0 +1,5 @@
+codigo_fornecedor;codigo_produto;codigo_universal;nome;descricao;preco
+1;101;1234567890123;Produto 1;Descrição do Produto A;10.00
+2;102;1234567890124;Produto 2;Descrição do Produto B;20.00
+3;103;1234567890125;Produto 3;Descrição do Produto C;30.00
+4;103;1234567890126;Produto 4;Descrição do Produto C;30.00
