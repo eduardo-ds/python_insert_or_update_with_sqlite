@@ -1,5 +1,6 @@
 from database import criar_banco, process_insert_or_update
 import pandas as pd
+import os
 
 
 def main():
@@ -8,7 +9,8 @@ def main():
     criar_banco()
 
     # criar a leiutura do arquivo csv
-    df_produtos_atualizar = pd.read_csv('produtos_atualizar.csv', sep=';')
+    caminho_csv = os.path.join(os.path.dirname(__file__), 'produtos_atualizar.csv')
+    df_produtos_atualizar = pd.read_csv(caminho_csv, sep=';')
 
     # realizar o merge entre dataframe ea tabela saida
     
