@@ -1,7 +1,11 @@
 import sqlite3
 
+def obter_conexao(db_path="meus_produtos.db"):
+    """Retorna conexão com SQLite."""
+    return sqlite3.connect(db_path)
+
 def criar_banco():
-    conn = sqlite3.connect('meus_produtos.db')
+    conn = obter_conexao()
     cursor = conn.cursor()
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS tb_produtos (
@@ -18,7 +22,7 @@ def criar_banco():
     conn.close()
 
 def process_insert_or_update(lista_dados):
-    conn = sqlite3.connect('meus_produtos.db')
+    conn = obter_conexao()
     cursor = conn.cursor()
     
     # Lógica para inserir ou atualizar os dados
