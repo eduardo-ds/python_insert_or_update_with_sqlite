@@ -10,14 +10,24 @@ def main():
 
     # criar a leiutura do arquivo csv
     caminho_csv = os.path.join(os.path.dirname(__file__), 'produtos_atualizar.csv')
-    df_produtos_atualizar = pd.read_csv(caminho_csv, sep=';')
-
-    # realizar o merge entre dataframe ea tabela saida
+    df_produtos_atualizar = pd.read_csv(caminho_csv, sep=';')    
     
     # Convertendo o DataFrame em lista de tuplas
     dados_para_inserir = list(df_produtos_atualizar.itertuples(index=False, name=None))
 
     process_insert_or_update(dados_para_inserir)
+
+    # realizar o merge entre dataframe ea tabela ja preenchida
+
+    caminho_csv = os.path.join(os.path.dirname(__file__), 'produtos_atualizar_v2.csv')
+    df_produtos_atualizar = pd.read_csv(caminho_csv, sep=';')    
+    
+    # Convertendo o DataFrame em lista de tuplas
+    dados_para_inserir = list(df_produtos_atualizar.itertuples(index=False, name=None))
+
+    process_insert_or_update(dados_para_inserir)
+
+    print("Processamento concluído com sucesso!")
 
 
     
